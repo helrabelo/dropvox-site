@@ -85,9 +85,9 @@
   "cta": {
     "title": "Pronto para transcrever?",
     "description": "Baixe o DropVox e comece a converter mensagens de voz em texto em segundos.",
-    "downloadButton": "Baixar DropVox-0.3.0.dmg",
+    "downloadButton": "Baixar para macOS",
     "githubButton": "Ver no GitHub",
-    "version": "v0.3.0 • macOS 10.15+ • Licença MIT"
+    "version": "macOS 10.15+ • Licença MIT"
   },
   "support": {
     "title": "Achou útil?",

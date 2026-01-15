@@ -613,7 +613,7 @@ export default async function LandingPage() {
 
           <FadeIn delay={200}>
             <p className="mt-6 text-sm text-slate-500">
-              {t("cta.version")}
+              v{VERSION} • {t("cta.version")}
             </p>
           </FadeIn>
         </div>
