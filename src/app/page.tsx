@@ -1,76 +1,13 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { CopyPixButton, PIX_KEY } from "@/components/ui/CopyPixButton";
 
 const GITHUB_URL = "https://github.com/helrabelo/voxdrop";
 const DOWNLOAD_URL =
   "https://github.com/helrabelo/voxdrop/releases/latest/download/VoxDrop-0.3.0.dmg";
-
-const features = [
-  {
-    icon: "brain",
-    title: "Local AI Powered",
-    description:
-      "Uses OpenAI Whisper running entirely on your Mac. No internet required after setup.",
-    popular: true,
-  },
-  {
-    icon: "globe",
-    title: "15+ Languages",
-    description:
-      "Supports Portuguese, English, Spanish, French, German, Chinese, Japanese, and more.",
-    popular: true,
-  },
-  {
-    icon: "menubar",
-    title: "Menu Bar App",
-    description:
-      "Lives quietly in your menu bar. Quick access without cluttering your dock.",
-    popular: false,
-  },
-  {
-    icon: "clipboard",
-    title: "Clipboard Integration",
-    description:
-      "Copy audio files in Finder, paste directly in VoxDrop. Results auto-copied.",
-    popular: false,
-  },
-  {
-    icon: "history",
-    title: "Transcription History",
-    description:
-      "Access your last 10 transcriptions anytime. Never lose important voice messages.",
-    popular: true,
-  },
-  {
-    icon: "lock",
-    title: "100% Private",
-    description:
-      "Your audio never leaves your Mac. No cloud, no accounts, no data collection.",
-    popular: false,
-  },
-];
-
-const steps = [
-  {
-    number: 1,
-    title: "Download & Install",
-    description:
-      "Download the DMG, drag VoxDrop to Applications. First run downloads the AI model (~150MB).",
-  },
-  {
-    number: 2,
-    title: "Select Audio Files",
-    description:
-      "Click the menu bar icon, pick audio files. Supports .opus, .mp3, .m4a, and .wav formats.",
-  },
-  {
-    number: 3,
-    title: "Get Your Text",
-    description:
-      "Transcription runs locally. Text is automatically copied to your clipboard when done.",
-  },
-];
 
 function FeatureIcon({ icon }: { icon: string }) {
   const iconClasses = "w-6 h-6";
@@ -177,7 +114,66 @@ function FeatureIcon({ icon }: { icon: string }) {
   }
 }
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const t = await getTranslations();
+
+  const features = [
+    {
+      icon: "brain",
+      title: t("features.items.localAI.title"),
+      description: t("features.items.localAI.description"),
+      popular: true,
+    },
+    {
+      icon: "globe",
+      title: t("features.items.languages.title"),
+      description: t("features.items.languages.description"),
+      popular: true,
+    },
+    {
+      icon: "menubar",
+      title: t("features.items.menuBar.title"),
+      description: t("features.items.menuBar.description"),
+      popular: false,
+    },
+    {
+      icon: "clipboard",
+      title: t("features.items.clipboard.title"),
+      description: t("features.items.clipboard.description"),
+      popular: false,
+    },
+    {
+      icon: "history",
+      title: t("features.items.history.title"),
+      description: t("features.items.history.description"),
+      popular: true,
+    },
+    {
+      icon: "lock",
+      title: t("features.items.privacy.title"),
+      description: t("features.items.privacy.description"),
+      popular: false,
+    },
+  ];
+
+  const steps = [
+    {
+      number: 1,
+      title: t("howItWorks.steps.download.title"),
+      description: t("howItWorks.steps.download.description"),
+    },
+    {
+      number: 2,
+      title: t("howItWorks.steps.select.title"),
+      description: t("howItWorks.steps.select.description"),
+    },
+    {
+      number: 3,
+      title: t("howItWorks.steps.getText.title"),
+      description: t("howItWorks.steps.getText.description"),
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -195,6 +191,7 @@ export default function LandingPage() {
               <span className="font-semibold text-lg">VoxDrop</span>
             </div>
             <div className="flex items-center gap-4">
+              <LanguageSwitcher />
               <ThemeToggle />
               <a
                 href={GITHUB_URL}
@@ -224,25 +221,23 @@ export default function LandingPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
               </span>
-              100% Free & Open Source
+              {t("hero.badge")}
             </div>
           </FadeIn>
 
           <FadeIn delay={100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Transcribe{" "}
+              {t("hero.title")}{" "}
               <span className="text-indigo-600 dark:text-indigo-400">
-                WhatsApp Audio
+                {t("hero.titleHighlight")}
               </span>{" "}
-              Messages in Seconds
+              {t("hero.titleEnd")}
             </h1>
           </FadeIn>
 
           <FadeIn delay={200}>
             <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto">
-              VoxDrop is a macOS menu bar app that converts voice messages to
-              text using AI. Works offline, supports 15+ languages, and never
-              uploads your audio anywhere.
+              {t("hero.description")}
             </p>
           </FadeIn>
 
@@ -265,13 +260,13 @@ export default function LandingPage() {
                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                   />
                 </svg>
-                Download for macOS
+                {t("hero.downloadButton")}
               </a>
               <a
                 href="#features"
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 font-medium transition-colors"
               >
-                See Features
+                {t("hero.featuresButton")}
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -291,8 +286,7 @@ export default function LandingPage() {
 
           <FadeIn delay={400}>
             <p className="mt-6 text-sm text-slate-500 dark:text-slate-500">
-              Requires macOS 10.15+ &bull; ~500MB disk space &bull; Apple Silicon &
-              Intel supported
+              {t("hero.requirements")}
             </p>
           </FadeIn>
         </div>
@@ -304,7 +298,7 @@ export default function LandingPage() {
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <span className="ml-2 text-sm text-slate-500">Menu Bar</span>
+              <span className="ml-2 text-sm text-slate-500">{t("preview.menuBar")}</span>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-lg p-4 space-y-3">
               <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer">
@@ -323,7 +317,7 @@ export default function LandingPage() {
                     />
                   </svg>
                 </div>
-                <span className="font-medium">Select Audio Files...</span>
+                <span className="font-medium">{t("preview.selectAudio")}</span>
               </div>
               <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800">
                 <div className="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/50 flex items-center justify-center">
@@ -341,24 +335,24 @@ export default function LandingPage() {
                     />
                   </svg>
                 </div>
-                <span className="font-medium">Paste from Clipboard</span>
+                <span className="font-medium">{t("preview.pasteClipboard")}</span>
               </div>
               <div className="border-t border-slate-200 dark:border-slate-700 pt-3">
                 <div className="text-xs text-slate-500 uppercase tracking-wide mb-2">
-                  Recent
+                  {t("preview.recent")}
                 </div>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between items-center text-slate-600 dark:text-slate-400">
                     <span className="truncate">
-                      &quot;Hey, can you call me back when...&quot;
+                      {t("preview.recentMessage1")}
                     </span>
-                    <span className="text-xs text-slate-400">2m ago</span>
+                    <span className="text-xs text-slate-400">{t("preview.recentTime1")}</span>
                   </div>
                   <div className="flex justify-between items-center text-slate-600 dark:text-slate-400">
                     <span className="truncate">
-                      &quot;The meeting is scheduled for...&quot;
+                      {t("preview.recentMessage2")}
                     </span>
-                    <span className="text-xs text-slate-400">15m ago</span>
+                    <span className="text-xs text-slate-400">{t("preview.recentTime2")}</span>
                   </div>
                 </div>
               </div>
@@ -372,11 +366,10 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              Everything you need
+              {t("features.title")}
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-center mb-12 max-w-2xl mx-auto">
-              Simple yet powerful features designed for one thing: converting
-              voice to text without hassle.
+              {t("features.description")}
             </p>
           </FadeIn>
 
@@ -392,7 +385,7 @@ export default function LandingPage() {
                 >
                   {feature.popular && (
                     <span className="absolute -top-3 right-4 px-3 py-1 text-xs font-medium bg-indigo-600 text-white rounded-full">
-                      Popular
+                      {t("features.popular")}
                     </span>
                   )}
                   <div className="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4">
@@ -414,10 +407,10 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              How it works
+              {t("howItWorks.title")}
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-center mb-12">
-              Three simple steps to transcribe your audio files.
+              {t("howItWorks.description")}
             </p>
           </FadeIn>
 
@@ -464,15 +457,13 @@ export default function LandingPage() {
 
           <FadeIn delay={100}>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Your privacy matters
+              {t("privacy.title")}
             </h2>
           </FadeIn>
 
           <FadeIn delay={200}>
             <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-              VoxDrop runs entirely on your Mac. Your audio files are processed
-              locally using OpenAI&apos;s Whisper model. No cloud uploads, no
-              accounts required, no data collection. Ever.
+              {t("privacy.description")}
             </p>
           </FadeIn>
 
@@ -492,7 +483,7 @@ export default function LandingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>No internet required</span>
+                <span>{t("privacy.noInternet")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg
@@ -508,7 +499,7 @@ export default function LandingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>No account needed</span>
+                <span>{t("privacy.noAccount")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg
@@ -524,7 +515,7 @@ export default function LandingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>Open source code</span>
+                <span>{t("privacy.openSource")}</span>
               </div>
             </div>
           </FadeIn>
@@ -536,11 +527,10 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Ready to transcribe?
+              {t("cta.title")}
             </h2>
             <p className="text-slate-600 dark:text-slate-400 mb-8">
-              Download VoxDrop and start converting voice messages to text in
-              seconds.
+              {t("cta.description")}
             </p>
           </FadeIn>
 
@@ -563,7 +553,7 @@ export default function LandingPage() {
                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                   />
                 </svg>
-                Download VoxDrop-0.3.0.dmg
+                {t("cta.downloadButton")}
               </a>
               <a
                 href={GITHUB_URL}
@@ -578,15 +568,64 @@ export default function LandingPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                View on GitHub
+                {t("cta.githubButton")}
               </a>
             </div>
           </FadeIn>
 
           <FadeIn delay={200}>
             <p className="mt-6 text-sm text-slate-500">
-              v0.3.0 &bull; macOS 10.15+ &bull; MIT License
+              {t("cta.version")}
             </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Support Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-800/30">
+        <div className="max-w-2xl mx-auto text-center">
+          <FadeIn>
+            <div className="text-4xl mb-4">☕</div>
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+              {t("support.title")}
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6">
+              {t("support.description")}
+            </p>
+
+            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm max-w-sm mx-auto">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <svg
+                  viewBox="0 0 512 512"
+                  className="w-6 h-6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="512" height="512" rx="64" fill="#00D4AA" />
+                  <path
+                    d="M193.8 295.4v73.5h-40.6V143.1h90.4c27.3 0 48.6 7.3 63.8 21.8 15.3 14.5 22.9 33.6 22.9 57.2 0 24-7.5 42.9-22.4 56.8-14.9 13.8-36.1 20.8-63.7 20.8h-50.4v-.3zm0-35.5h49.8c14.3 0 25.3-3.6 32.9-10.9 7.6-7.3 11.4-17.6 11.4-30.8 0-12.9-3.8-23.3-11.3-31.2-7.5-7.9-18.1-11.9-31.8-12H193.8v84.9zm148.6 109h-40.6V143.1h40.6v225.8zm61.3 0l-67.1-105.8v-.6l69.5-119.4h47.1l-72.7 119.4 75 106.4h-47.8z"
+                    fill="white"
+                  />
+                </svg>
+                <span className="font-medium text-slate-900 dark:text-white">
+                  {t("support.pix")}
+                </span>
+              </div>
+
+              <div className="bg-slate-100 dark:bg-slate-700 rounded-lg p-3 mb-3">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                  {t("support.pixKeyLabel")}
+                </p>
+                <p className="font-mono text-slate-900 dark:text-white select-all text-sm break-all">
+                  {PIX_KEY}
+                </p>
+              </div>
+
+              <CopyPixButton
+                label={t("support.copyButton")}
+                copiedLabel={t("support.copiedButton")}
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -603,7 +642,7 @@ export default function LandingPage() {
               className="rounded-md"
             />
             <span className="text-sm text-slate-600 dark:text-slate-400">
-              Built by{" "}
+              {t("footer.builtBy")}{" "}
               <a
                 href="https://github.com/helrabelo"
                 target="_blank"
@@ -621,7 +660,7 @@ export default function LandingPage() {
               rel="noopener noreferrer"
               className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
-              GitHub
+              {t("nav.github")}
             </a>
             <a
               href={`${GITHUB_URL}/releases`}
@@ -629,7 +668,7 @@ export default function LandingPage() {
               rel="noopener noreferrer"
               className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
-              Releases
+              {t("footer.releases")}
             </a>
             <a
               href={`${GITHUB_URL}/issues`}
@@ -637,7 +676,7 @@ export default function LandingPage() {
               rel="noopener noreferrer"
               className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
-              Issues
+              {t("footer.issues")}
             </a>
           </div>
         </div>

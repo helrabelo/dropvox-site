@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "VoxDrop - Transcribe WhatsApp Audio Messages",
+    "description": "Free macOS menu bar app that converts voice messages to text using AI. Works offline, supports 15+ languages."
+  },
+  "nav": {
+    "github": "GitHub"
+  },
+  "hero": {
+    "badge": "100% Free & Open Source",
+    "title": "Transcribe",
+    "titleHighlight": "WhatsApp Audio",
+    "titleEnd": "Messages in Seconds",
+    "description": "VoxDrop is a macOS menu bar app that converts voice messages to text using AI. Works offline, supports 15+ languages, and never uploads your audio anywhere.",
+    "downloadButton": "Download for macOS",
+    "featuresButton": "See Features",
+    "requirements": "Requires macOS 10.15+ • ~500MB disk space • Apple Silicon & Intel supported"
+  },
+  "preview": {
+    "menuBar": "Menu Bar",
+    "selectAudio": "Select Audio Files...",
+    "pasteClipboard": "Paste from Clipboard",
+    "recent": "Recent",
+    "recentMessage1": "\"Hey, can you call me back when...\"",
+    "recentTime1": "2m ago",
+    "recentMessage2": "\"The meeting is scheduled for...\"",
+    "recentTime2": "15m ago"
+  },
+  "features": {
+    "title": "Everything you need",
+    "description": "Simple yet powerful features designed for one thing: converting voice to text without hassle.",
+    "popular": "Popular",
+    "items": {
+      "localAI": {
+        "title": "Local AI Powered",
+        "description": "Uses OpenAI Whisper running entirely on your Mac. No internet required after setup."
+      },
+      "languages": {
+        "title": "15+ Languages",
+        "description": "Supports Portuguese, English, Spanish, French, German, Chinese, Japanese, and more."
+      },
+      "menuBar": {
+        "title": "Menu Bar App",
+        "description": "Lives quietly in your menu bar. Quick access without cluttering your dock."
+      },
+      "clipboard": {
+        "title": "Clipboard Integration",
+        "description": "Copy audio files in Finder, paste directly in VoxDrop. Results auto-copied."
+      },
+      "history": {
+        "title": "Transcription History",
+        "description": "Access your last 10 transcriptions anytime. Never lose important voice messages."
+      },
+      "privacy": {
+        "title": "100% Private",
+        "description": "Your audio never leaves your Mac. No cloud, no accounts, no data collection."
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "description": "Three simple steps to transcribe your audio files.",
+    "steps": {
+      "download": {
+        "title": "Download & Install",
+        "description": "Download the DMG, drag VoxDrop to Applications. First run downloads the AI model (~150MB)."
+      },
+      "select": {
+        "title": "Select Audio Files",
+        "description": "Click the menu bar icon, pick audio files. Supports .opus, .mp3, .m4a, and .wav formats."
+      },
+      "getText": {
+        "title": "Get Your Text",
+        "description": "Transcription runs locally. Text is automatically copied to your clipboard when done."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Your privacy matters",
+    "description": "VoxDrop runs entirely on your Mac. Your audio files are processed locally using OpenAI's Whisper model. No cloud uploads, no accounts required, no data collection. Ever.",
+    "noInternet": "No internet required",
+    "noAccount": "No account needed",
+    "openSource": "Open source code"
+  },
+  "cta": {
+    "title": "Ready to transcribe?",
+    "description": "Download VoxDrop and start converting voice messages to text in seconds.",
+    "downloadButton": "Download VoxDrop-0.3.0.dmg",
+    "githubButton": "View on GitHub",
+    "version": "v0.3.0 • macOS 10.15+ • MIT License"
+  },
+  "support": {
+    "title": "Find this helpful?",
+    "description": "VoxDrop is free and open source. If it saves you time transcribing voice messages, consider buying me a coffee.",
+    "pix": "PIX",
+    "pixKeyLabel": "PIX Key (Random)",
+    "copyButton": "Copy PIX Key",
+    "copiedButton": "Copied!"
+  },
+  "footer": {
+    "builtBy": "Built by",
+    "releases": "Releases",
+    "issues": "Issues"
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  }
+}

@@ -1,0 +1,43 @@
+"use client";
+
+import { useTransition } from "react";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/i18n/request";
+
+const localeNames: Record<Locale, string> = {
+  en: "EN",
+  "pt-BR": "PT",
+};
+
+export function LanguageSwitcher() {
+  const locale = useLocale() as Locale;
+  const [isPending, startTransition] = useTransition();
+
+  const handleChange = (newLocale: Locale) => {
+    startTransition(() => {
+      // Set cookie for locale preference
+      document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000`;
+      // Reload to apply the new locale
+      window.location.reload();
+    });
+  };
+
+  return (
+    <div className="flex items-center gap-1 text-sm">
+      {(Object.keys(localeNames) as Locale[]).map((loc) => (
+        <button
+          key={loc}
+          onClick={() => handleChange(loc)}
+          disabled={isPending}
+          className={`px-2 py-1 rounded transition-colors ${
+            locale === loc
+              ? "bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-medium"
+              : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+          } ${isPending ? "opacity-50 cursor-wait" : ""}`}
+        >
+          {localeNames[loc]}
+        </button>
+      ))}
+    </div>
+  );
+}

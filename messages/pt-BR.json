@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "VoxDrop - Transcreva Mensagens de Áudio do WhatsApp",
+    "description": "App gratuito para macOS que converte mensagens de voz em texto usando IA. Funciona offline, suporta mais de 15 idiomas."
+  },
+  "nav": {
+    "github": "GitHub"
+  },
+  "hero": {
+    "badge": "100% Gratuito e Open Source",
+    "title": "Transcreva",
+    "titleHighlight": "Áudios do WhatsApp",
+    "titleEnd": "em Segundos",
+    "description": "VoxDrop é um app de menu bar para macOS que converte mensagens de voz em texto usando IA. Funciona offline, suporta mais de 15 idiomas e nunca envia seu áudio para lugar nenhum.",
+    "downloadButton": "Baixar para macOS",
+    "featuresButton": "Ver Recursos",
+    "requirements": "Requer macOS 10.15+ • ~500MB de espaço • Apple Silicon e Intel"
+  },
+  "preview": {
+    "menuBar": "Menu Bar",
+    "selectAudio": "Selecionar Arquivos de Áudio...",
+    "pasteClipboard": "Colar da Área de Transferência",
+    "recent": "Recentes",
+    "recentMessage1": "\"Oi, pode me ligar quando...\"",
+    "recentTime1": "2min atrás",
+    "recentMessage2": "\"A reunião está marcada para...\"",
+    "recentTime2": "15min atrás"
+  },
+  "features": {
+    "title": "Tudo que você precisa",
+    "description": "Recursos simples e poderosos feitos para uma coisa: converter voz em texto sem complicação.",
+    "popular": "Popular",
+    "items": {
+      "localAI": {
+        "title": "IA Local",
+        "description": "Usa OpenAI Whisper rodando totalmente no seu Mac. Não precisa de internet após a configuração."
+      },
+      "languages": {
+        "title": "15+ Idiomas",
+        "description": "Suporta Português, Inglês, Espanhol, Francês, Alemão, Chinês, Japonês e mais."
+      },
+      "menuBar": {
+        "title": "App de Menu Bar",
+        "description": "Fica discreto no menu bar. Acesso rápido sem poluir o dock."
+      },
+      "clipboard": {
+        "title": "Integração com Clipboard",
+        "description": "Copie arquivos de áudio no Finder, cole direto no VoxDrop. Resultado copiado automaticamente."
+      },
+      "history": {
+        "title": "Histórico de Transcrições",
+        "description": "Acesse suas últimas 10 transcrições a qualquer momento. Nunca perca mensagens importantes."
+      },
+      "privacy": {
+        "title": "100% Privado",
+        "description": "Seu áudio nunca sai do seu Mac. Sem nuvem, sem contas, sem coleta de dados."
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "Como funciona",
+    "description": "Três passos simples para transcrever seus arquivos de áudio.",
+    "steps": {
+      "download": {
+        "title": "Baixe e Instale",
+        "description": "Baixe o DMG, arraste VoxDrop para Aplicativos. Na primeira execução, baixa o modelo de IA (~150MB)."
+      },
+      "select": {
+        "title": "Selecione os Áudios",
+        "description": "Clique no ícone do menu bar, escolha os arquivos. Suporta .opus, .mp3, .m4a e .wav."
+      },
+      "getText": {
+        "title": "Receba o Texto",
+        "description": "A transcrição roda localmente. O texto é copiado automaticamente para sua área de transferência."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Sua privacidade importa",
+    "description": "VoxDrop roda totalmente no seu Mac. Seus arquivos de áudio são processados localmente usando o modelo Whisper da OpenAI. Sem uploads na nuvem, sem necessidade de conta, sem coleta de dados. Nunca.",
+    "noInternet": "Não precisa de internet",
+    "noAccount": "Não precisa de conta",
+    "openSource": "Código aberto"
+  },
+  "cta": {
+    "title": "Pronto para transcrever?",
+    "description": "Baixe o VoxDrop e comece a converter mensagens de voz em texto em segundos.",
+    "downloadButton": "Baixar VoxDrop-0.3.0.dmg",
+    "githubButton": "Ver no GitHub",
+    "version": "v0.3.0 • macOS 10.15+ • Licença MIT"
+  },
+  "support": {
+    "title": "Achou útil?",
+    "description": "VoxDrop é gratuito e open source. Se ele economiza seu tempo transcrevendo mensagens de voz, considere me pagar um café.",
+    "pix": "PIX",
+    "pixKeyLabel": "Chave PIX (Aleatória)",
+    "copyButton": "Copiar Chave PIX",
+    "copiedButton": "Copiado!"
+  },
+  "footer": {
+    "builtBy": "Feito por",
+    "releases": "Releases",
+    "issues": "Issues"
+  },
+  "languageSwitcher": {
+    "label": "Idioma"
+  }
+}
