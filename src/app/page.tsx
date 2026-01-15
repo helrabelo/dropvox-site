@@ -7,7 +7,7 @@ import { CopyPixButton, PIX_KEY } from "@/components/ui/CopyPixButton";
 
 const GITHUB_URL = "https://github.com/helrabelo/voxdrop";
 const DOWNLOAD_URL =
-  "https://github.com/helrabelo/voxdrop/releases/latest/download/VoxDrop-0.3.0.dmg";
+  "https://github.com/helrabelo/voxdrop/releases/latest/download/VoxDrop-0.4.0.dmg";
 
 function FeatureIcon({ icon }: { icon: string }) {
   const iconClasses = "w-6 h-6";
