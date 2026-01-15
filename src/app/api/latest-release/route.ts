@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 
 const GITHUB_API =
-  "https://api.github.com/repos/helrabelo/voxdrop/releases/latest";
+  "https://api.github.com/repos/helrabelo/dropvox/releases/latest";
 
 export async function GET() {
   try {
     const res = await fetch(GITHUB_API, {
       headers: {
         Accept: "application/vnd.github.v3+json",
-        "User-Agent": "voxdrop-site",
+        "User-Agent": "dropvox-site",
       },
       next: { revalidate: 300 }, // Cache for 5 minutes
     });
@@ -39,7 +39,7 @@ export async function GET() {
         version: "0.4.0",
         tagName: "v0.4.0",
         downloadUrl:
-          "https://github.com/helrabelo/voxdrop/releases/latest/download/VoxDrop-0.4.0.dmg",
+          "https://github.com/helrabelo/dropvox/releases/latest/download/VoxDrop-0.4.0.dmg",
         fileName: "VoxDrop-0.4.0.dmg",
         error: "Failed to fetch latest release",
       },

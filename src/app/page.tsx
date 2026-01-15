@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { CopyPixButton, PIX_KEY } from "@/components/ui/CopyPixButton";
 
-const GITHUB_URL = "https://github.com/helrabelo/voxdrop";
+const GITHUB_URL = "https://github.com/helrabelo/dropvox";
 
 // Fetch latest release info from GitHub API
 async function getLatestRelease() {
@@ -15,7 +15,7 @@ async function getLatestRelease() {
       {
         headers: {
           Accept: "application/vnd.github.v3+json",
-          "User-Agent": "voxdrop-site",
+          "User-Agent": "dropvox-site",
         },
         next: { revalidate: 300 }, // Cache for 5 minutes
       }
@@ -32,14 +32,14 @@ async function getLatestRelease() {
       version: data.tag_name?.replace(/^v/, "") || "0.4.0",
       downloadUrl:
         dmgAsset?.browser_download_url ||
-        "https://github.com/helrabelo/voxdrop/releases/latest",
+        "https://github.com/helrabelo/dropvox/releases/latest",
     };
   } catch {
     // Fallback to latest known version
     return {
       version: "0.4.0",
       downloadUrl:
-        "https://github.com/helrabelo/voxdrop/releases/download/v0.4.0/VoxDrop-0.4.0.dmg",
+        "https://github.com/helrabelo/dropvox/releases/download/v0.4.0/DropVox-0.4.0.dmg",
     };
   }
 }
@@ -221,12 +221,12 @@ export default async function LandingPage() {
             <div className="flex items-center gap-3">
               <Image
                 src="/icon.png"
-                alt="VoxDrop"
+                alt="DropVox"
                 width={32}
                 height={32}
                 className="rounded-lg"
               />
-              <span className="font-semibold text-lg">VoxDrop</span>
+              <span className="font-semibold text-lg">DropVox</span>
             </div>
             <div className="flex items-center gap-4">
               <LanguageSwitcher />
@@ -674,7 +674,7 @@ export default async function LandingPage() {
           <div className="flex items-center gap-3">
             <Image
               src="/icon.png"
-              alt="VoxDrop"
+              alt="DropVox"
               width={24}
               height={24}
               className="rounded-md"

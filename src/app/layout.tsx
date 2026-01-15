@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VoxDrop - Transcribe WhatsApp Audio Messages on Mac",
+  title: "DropVox - Transcribe WhatsApp Audio Messages on Mac",
   description:
-    "VoxDrop is a free macOS menu bar app that transcribes WhatsApp voice messages and audio files using AI. 100% local, private, and offline.",
+    "DropVox is a free macOS menu bar app that transcribes WhatsApp voice messages and audio files using AI. 100% local, private, and offline.",
   keywords: [
     "whatsapp voice message transcription",
     "mac audio transcription",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Hel Rabelo" }],
   openGraph: {
-    title: "VoxDrop - Transcribe WhatsApp Audio Messages",
+    title: "DropVox - Transcribe WhatsApp Audio Messages",
     description:
       "Free macOS menu bar app for transcribing audio files using AI. 100% local and private.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "VoxDrop - Audio Transcription for Mac",
+    title: "DropVox - Audio Transcription for Mac",
     description:
       "Free macOS menu bar app for transcribing audio files using AI. 100% local and private.",
   },

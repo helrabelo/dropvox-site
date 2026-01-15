@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "VoxDrop - Transcreva Mensagens de Áudio do WhatsApp",
+    "title": "DropVox - Transcreva Mensagens de Áudio do WhatsApp",
     "description": "App gratuito para macOS que converte mensagens de voz em texto usando IA. Funciona offline, suporta mais de 15 idiomas."
   },
   "nav": {
@@ -11,7 +11,7 @@
     "title": "Transcreva",
     "titleHighlight": "Áudios do WhatsApp",
     "titleEnd": "em Segundos",
-    "description": "VoxDrop é um app de menu bar para macOS que converte mensagens de voz em texto usando IA. Funciona offline, suporta mais de 15 idiomas e nunca envia seu áudio para lugar nenhum.",
+    "description": "DropVox é um app de menu bar para macOS que converte mensagens de voz em texto usando IA. Funciona offline, suporta mais de 15 idiomas e nunca envia seu áudio para lugar nenhum.",
     "downloadButton": "Baixar para macOS",
     "featuresButton": "Ver Recursos",
     "requirements": "Requer macOS 10.15+ • ~500MB de espaço • Apple Silicon e Intel"
@@ -45,7 +45,7 @@
       },
       "clipboard": {
         "title": "Integração com Clipboard",
-        "description": "Copie arquivos de áudio no Finder, cole direto no VoxDrop. Resultado copiado automaticamente."
+        "description": "Copie arquivos de áudio no Finder, cole direto no DropVox. Resultado copiado automaticamente."
       },
       "history": {
         "title": "Histórico de Transcrições",
@@ -63,7 +63,7 @@
     "steps": {
       "download": {
         "title": "Baixe e Instale",
-        "description": "Baixe o DMG, arraste VoxDrop para Aplicativos. Na primeira execução, baixa o modelo de IA (~150MB)."
+        "description": "Baixe o DMG, arraste DropVox para Aplicativos. Na primeira execução, baixa o modelo de IA (~150MB)."
       },
       "select": {
         "title": "Selecione os Áudios",
@@ -77,21 +77,21 @@
   },
   "privacy": {
     "title": "Sua privacidade importa",
-    "description": "VoxDrop roda totalmente no seu Mac. Seus arquivos de áudio são processados localmente usando o modelo Whisper da OpenAI. Sem uploads na nuvem, sem necessidade de conta, sem coleta de dados. Nunca.",
+    "description": "DropVox roda totalmente no seu Mac. Seus arquivos de áudio são processados localmente usando o modelo Whisper da OpenAI. Sem uploads na nuvem, sem necessidade de conta, sem coleta de dados. Nunca.",
     "noInternet": "Não precisa de internet",
     "noAccount": "Não precisa de conta",
     "openSource": "Código aberto"
   },
   "cta": {
     "title": "Pronto para transcrever?",
-    "description": "Baixe o VoxDrop e comece a converter mensagens de voz em texto em segundos.",
-    "downloadButton": "Baixar VoxDrop-0.3.0.dmg",
+    "description": "Baixe o DropVox e comece a converter mensagens de voz em texto em segundos.",
+    "downloadButton": "Baixar DropVox-0.3.0.dmg",
     "githubButton": "Ver no GitHub",
     "version": "v0.3.0 • macOS 10.15+ • Licença MIT"
   },
   "support": {
     "title": "Achou útil?",
-    "description": "VoxDrop é gratuito e open source. Se ele economiza seu tempo transcrevendo mensagens de voz, considere me pagar um café.",
+    "description": "DropVox é gratuito e open source. Se ele economiza seu tempo transcrevendo mensagens de voz, considere me pagar um café.",
     "pix": "PIX",
     "pixKeyLabel": "Chave PIX (Aleatória)",
     "copyButton": "Copiar Chave PIX",
