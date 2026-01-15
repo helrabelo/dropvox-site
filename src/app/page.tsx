@@ -11,7 +11,7 @@ const GITHUB_URL = "https://github.com/helrabelo/dropvox";
 async function getLatestRelease() {
   try {
     const res = await fetch(
-      "https://api.github.com/repos/helrabelo/voxdrop/releases/latest",
+      "https://api.github.com/repos/helrabelo/dropvox/releases/latest",
       {
         headers: {
           Accept: "application/vnd.github.v3+json",
@@ -29,7 +29,7 @@ async function getLatestRelease() {
     );
 
     return {
-      version: data.tag_name?.replace(/^v/, "") || "0.4.0",
+      version: data.tag_name?.replace(/^v/, "") || "0.6.0",
       downloadUrl:
         dmgAsset?.browser_download_url ||
         "https://github.com/helrabelo/dropvox/releases/latest",
@@ -37,9 +37,9 @@ async function getLatestRelease() {
   } catch {
     // Fallback to latest known version
     return {
-      version: "0.4.0",
+      version: "0.6.0",
       downloadUrl:
-        "https://github.com/helrabelo/dropvox/releases/download/v0.4.0/DropVox-0.4.0.dmg",
+        "https://github.com/helrabelo/dropvox/releases/download/v0.6.0/DropVox-0.6.0.dmg",
     };
   }
 }
