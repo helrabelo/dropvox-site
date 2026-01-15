@@ -6,8 +6,43 @@ import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { CopyPixButton, PIX_KEY } from "@/components/ui/CopyPixButton";
 
 const GITHUB_URL = "https://github.com/helrabelo/voxdrop";
-const DOWNLOAD_URL =
-  "https://github.com/helrabelo/voxdrop/releases/latest/download/VoxDrop-0.4.0.dmg";
+
+// Fetch latest release info from GitHub API
+async function getLatestRelease() {
+  try {
+    const res = await fetch(
+      "https://api.github.com/repos/helrabelo/voxdrop/releases/latest",
+      {
+        headers: {
+          Accept: "application/vnd.github.v3+json",
+          "User-Agent": "voxdrop-site",
+        },
+        next: { revalidate: 300 }, // Cache for 5 minutes
+      }
+    );
+
+    if (!res.ok) throw new Error("GitHub API error");
+
+    const data = await res.json();
+    const dmgAsset = data.assets?.find((a: { name: string }) =>
+      a.name.endsWith(".dmg")
+    );
+
+    return {
+      version: data.tag_name?.replace(/^v/, "") || "0.4.0",
+      downloadUrl:
+        dmgAsset?.browser_download_url ||
+        "https://github.com/helrabelo/voxdrop/releases/latest",
+    };
+  } catch {
+    // Fallback to latest known version
+    return {
+      version: "0.4.0",
+      downloadUrl:
+        "https://github.com/helrabelo/voxdrop/releases/download/v0.4.0/VoxDrop-0.4.0.dmg",
+    };
+  }
+}
 
 function FeatureIcon({ icon }: { icon: string }) {
   const iconClasses = "w-6 h-6";
@@ -116,6 +151,9 @@ function FeatureIcon({ icon }: { icon: string }) {
 
 export default async function LandingPage() {
   const t = await getTranslations();
+  const release = await getLatestRelease();
+  const DOWNLOAD_URL = release.downloadUrl;
+  const VERSION = release.version;
 
   const features = [
     {
