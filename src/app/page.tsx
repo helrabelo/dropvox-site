@@ -1,9 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { CopyPixButton, PIX_KEY } from "@/components/ui/CopyPixButton";
+import { DownloadButton } from "@/components/ui/DownloadButton";
+import { GitHubButton } from "@/components/ui/GitHubButton";
 
 const GITHUB_URL = "https://github.com/helrabelo/dropvox";
 
@@ -231,10 +234,9 @@ export default async function LandingPage() {
             <div className="flex items-center gap-4">
               <LanguageSwitcher />
               <ThemeToggle />
-              <a
+              <GitHubButton
                 href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                location="nav"
                 className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -244,7 +246,7 @@ export default async function LandingPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-              </a>
+              </GitHubButton>
             </div>
           </div>
         </div>
@@ -281,8 +283,10 @@ export default async function LandingPage() {
 
           <FadeIn delay={300}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <DownloadButton
                 href={DOWNLOAD_URL}
+                version={VERSION}
+                location="hero"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-lg transition-all hover:scale-105 shadow-lg shadow-indigo-500/25"
               >
                 <svg
@@ -299,7 +303,7 @@ export default async function LandingPage() {
                   />
                 </svg>
                 {t("hero.downloadButton")}
-              </a>
+              </DownloadButton>
               <a
                 href="#features"
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 font-medium transition-colors"
@@ -574,8 +578,10 @@ export default async function LandingPage() {
 
           <FadeIn delay={100}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <DownloadButton
                 href={DOWNLOAD_URL}
+                version={VERSION}
+                location="cta"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-lg transition-all hover:scale-105 shadow-lg shadow-indigo-500/25"
               >
                 <svg
@@ -592,11 +598,10 @@ export default async function LandingPage() {
                   />
                 </svg>
                 {t("cta.downloadButton")}
-              </a>
-              <a
+              </DownloadButton>
+              <GitHubButton
                 href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                location="cta"
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 font-medium transition-colors"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -607,7 +612,7 @@ export default async function LandingPage() {
                   />
                 </svg>
                 {t("cta.githubButton")}
-              </a>
+              </GitHubButton>
             </div>
           </FadeIn>
 
@@ -692,14 +697,19 @@ export default async function LandingPage() {
             </span>
           </div>
           <div className="flex items-center gap-6 text-sm text-slate-500">
-            <a
+            <Link
+              href="/blog"
+              className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+            >
+              Blog
+            </Link>
+            <GitHubButton
               href={GITHUB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              location="footer"
               className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
               {t("nav.github")}
-            </a>
+            </GitHubButton>
             <a
               href={`${GITHUB_URL}/releases`}
               target="_blank"
