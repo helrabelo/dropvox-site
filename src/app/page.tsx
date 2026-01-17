@@ -8,13 +8,13 @@ import { CopyPixButton, PIX_KEY } from "@/components/ui/CopyPixButton";
 import { DownloadButton } from "@/components/ui/DownloadButton";
 import { GitHubButton } from "@/components/ui/GitHubButton";
 
-const GITHUB_URL = "https://github.com/helrabelo/dropvox";
+const GITHUB_URL = "https://github.com/helsky-labs/dropvox";
 
 // Fetch latest release info from GitHub API
 async function getLatestRelease() {
   try {
     const res = await fetch(
-      "https://api.github.com/repos/helrabelo/dropvox/releases/latest",
+      "https://api.github.com/repos/helsky-labs/dropvox/releases/latest",
       {
         headers: {
           Accept: "application/vnd.github.v3+json",
@@ -35,14 +35,14 @@ async function getLatestRelease() {
       version: data.tag_name?.replace(/^v/, "") || "0.7.2",
       downloadUrl:
         dmgAsset?.browser_download_url ||
-        "https://github.com/helrabelo/dropvox/releases/latest",
+        "https://github.com/helsky-labs/dropvox/releases/latest",
     };
   } catch {
     // Fallback to latest known version
     return {
       version: "0.7.2",
       downloadUrl:
-        "https://github.com/helrabelo/dropvox/releases/download/v0.7.2/DropVox-0.7.2.dmg",
+        "https://github.com/helsky-labs/dropvox/releases/download/v0.7.2/DropVox-0.7.2.dmg",
     };
   }
 }

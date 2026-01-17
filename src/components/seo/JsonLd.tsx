@@ -55,7 +55,7 @@ export function JsonLd() {
     name: "DropVox",
     url: baseUrl,
     logo: `${baseUrl}/icon.png`,
-    sameAs: ["https://github.com/helrabelo/dropvox"],
+    sameAs: ["https://github.com/helsky-labs/dropvox"],
   };
 
   return (

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const GITHUB_API =
-  "https://api.github.com/repos/helrabelo/dropvox/releases/latest";
+  "https://api.github.com/repos/helsky-labs/dropvox/releases/latest";
 
 export async function GET() {
   try {
@@ -39,7 +39,7 @@ export async function GET() {
         version: "0.7.2",
         tagName: "v0.7.2",
         downloadUrl:
-          "https://github.com/helrabelo/dropvox/releases/download/v0.7.2/DropVox-0.7.2.dmg",
+          "https://github.com/helsky-labs/dropvox/releases/download/v0.7.2/DropVox-0.7.2.dmg",
         fileName: "DropVox-0.7.2.dmg",
         error: "Failed to fetch latest release",
       },
