@@ -232,6 +232,12 @@ export default async function LandingPage() {
               <span className="font-semibold text-lg">DropVox</span>
             </div>
             <div className="flex items-center gap-4">
+              <Link
+                href="/pricing"
+                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+              >
+                Pricing
+              </Link>
               <LanguageSwitcher />
               <ThemeToggle />
               <GitHubButton
