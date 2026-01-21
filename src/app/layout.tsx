@@ -116,7 +116,7 @@ export default async function RootLayout({
         <JsonLd />
         <Script
           defer
-          src="https://analytics.helsky.dev/script.js"
+          src="https://analytics.helsky-labs.com/script.js"
           data-website-id="0ad0ef26-6851-478a-aba6-d2cb149707e7"
         />
       </head>
