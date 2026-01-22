@@ -1,99 +1,108 @@
 {
   "meta": {
-    "title": "DropVox - Transcreva Mensagens de Áudio do WhatsApp",
-    "description": "App gratuito para macOS que converte mensagens de voz em texto usando IA. Funciona offline, suporta mais de 15 idiomas."
+    "title": "DropVox - Transcreva Mensagens de Audio do WhatsApp",
+    "description": "App nativo para macOS que converte mensagens de voz em texto usando IA local. Funciona offline, suporta 13 idiomas, otimizado para Apple Silicon."
   },
   "nav": {
     "github": "GitHub"
   },
   "hero": {
-    "badge": "100% Gratuito e Open Source",
+    "badge": "App Swift Nativo - v1.0",
     "title": "Transcreva",
-    "titleHighlight": "Áudios do WhatsApp",
+    "titleHighlight": "Audios do WhatsApp",
     "titleEnd": "em Segundos",
-    "description": "DropVox é um app de menu bar para macOS que converte mensagens de voz em texto usando IA. Funciona offline, suporta mais de 15 idiomas e nunca envia seu áudio para lugar nenhum.",
+    "description": "DropVox e um app nativo para macOS que converte mensagens de voz em texto usando WhisperKit AI. Janela completa, acesso via menu bar e zona de arraste flutuante. Funciona offline, suporta 13 idiomas e nunca envia seu audio para lugar nenhum.",
     "downloadButton": "Baixar para macOS",
     "featuresButton": "Ver Recursos",
-    "requirements": "Requer macOS 10.15+ • ~500MB de espaço • Apple Silicon e Intel"
+    "requirements": "Requer macOS 14+ (Sonoma) • Apple Silicon • 75MB-3GB para modelos de IA"
   },
   "preview": {
-    "menuBar": "Menu Bar",
-    "selectAudio": "Selecionar Arquivos de Áudio...",
-    "pasteClipboard": "Colar da Área de Transferência",
-    "recent": "Recentes",
+    "menuBar": "Janela Principal - Dashboard",
+    "selectAudio": "Selecionar Arquivos de Audio...",
+    "pasteClipboard": "Colar da Area de Transferencia (Cmd+V)",
+    "recent": "Transcricoes Recentes",
     "recentMessage1": "\"Oi, pode me ligar quando...\"",
-    "recentTime1": "2min atrás",
-    "recentMessage2": "\"A reunião está marcada para...\"",
-    "recentTime2": "15min atrás"
+    "recentTime1": "2min atras",
+    "recentMessage2": "\"A reuniao esta marcada para...\"",
+    "recentTime2": "15min atras"
   },
   "features": {
-    "title": "Tudo que você precisa",
-    "description": "Recursos simples e poderosos feitos para uma coisa: converter voz em texto sem complicação.",
+    "title": "Tudo que voce precisa",
+    "description": "Uma solucao completa de transcricao com multiplas formas de trabalhar: janela completa, menu bar, atalhos de teclado e arrastar e soltar.",
     "popular": "Popular",
+    "new": "Novo",
     "items": {
       "localAI": {
-        "title": "IA Local",
-        "description": "Usa OpenAI Whisper rodando totalmente no seu Mac. Não precisa de internet após a configuração."
+        "title": "WhisperKit AI",
+        "description": "Usa WhisperKit otimizado para Apple Silicon. Escolha entre 5 modelos (75MB-3GB). Nao precisa de internet apos a configuracao."
       },
       "languages": {
-        "title": "15+ Idiomas",
-        "description": "Suporta Português, Inglês, Espanhol, Francês, Alemão, Chinês, Japonês e mais."
+        "title": "13 Idiomas",
+        "description": "Deteccao automatica ou escolha: Portugues, Ingles, Espanhol, Frances, Alemao, Chines, Japones, Coreano e mais."
       },
-      "menuBar": {
-        "title": "App de Menu Bar",
-        "description": "Fica discreto no menu bar. Acesso rápido sem poluir o dock."
+      "fullApp": {
+        "title": "Janela Completa",
+        "description": "Dashboard com acoes rapidas, navegador de historico com busca e configuracoes. Nao e mais apenas um app de menu bar."
       },
       "clipboard": {
-        "title": "Integração com Clipboard",
-        "description": "Copie arquivos de áudio no Finder, cole direto no DropVox. Resultado copiado automaticamente."
+        "title": "Colar com Cmd+V",
+        "description": "Copie arquivos de audio no Finder, pressione Cmd+V no DropVox. Transcricao instantanea com resultados copiados automaticamente."
+      },
+      "dropZone": {
+        "title": "Zona de Arraste",
+        "description": "Janela flutuante para arrastar e soltar. Mantenha visivel enquanto navega pelos arquivos. Ative com Cmd+D."
       },
       "history": {
-        "title": "Histórico de Transcrições",
-        "description": "Acesse suas últimas 10 transcrições a qualquer momento. Nunca perca mensagens importantes."
+        "title": "Navegador de Historico",
+        "description": "Historico completo de todas as transcricoes com busca. Veja detalhes, copie texto, veja qual modelo foi usado."
+      },
+      "models": {
+        "title": "Selecao de Modelo",
+        "description": "Escolha precisao vs velocidade: Tiny (75MB, mais rapido) ate Large (3GB, mais preciso). Baixe apenas o que precisar."
       },
       "privacy": {
         "title": "100% Privado",
-        "description": "Seu áudio nunca sai do seu Mac. Sem nuvem, sem contas, sem coleta de dados."
+        "description": "Seu audio nunca sai do seu Mac. Sem nuvem, sem contas, sem coleta de dados. Tudo roda localmente."
       }
     }
   },
   "howItWorks": {
     "title": "Como funciona",
-    "description": "Três passos simples para transcrever seus arquivos de áudio.",
+    "description": "Tres formas de transcrever seus arquivos de audio - use a que melhor se encaixa no seu fluxo de trabalho.",
     "steps": {
       "download": {
         "title": "Baixe e Instale",
-        "description": "Baixe o DMG, arraste DropVox para Aplicativos. Na primeira execução, baixa o modelo de IA (~150MB)."
+        "description": "Baixe o DMG, arraste DropVox para Aplicativos. Na primeira execucao, escolha e baixe um modelo de IA (75MB-3GB)."
       },
       "select": {
-        "title": "Selecione os Áudios",
-        "description": "Clique no ícone do menu bar, escolha os arquivos. Suporta .opus, .mp3, .m4a e .wav."
+        "title": "Transcreva do Seu Jeito",
+        "description": "Use a janela principal, clique no icone do menu bar, pressione Cmd+V para colar ou arraste arquivos para a Zona de Arraste. Suporta .opus, .mp3, .m4a e .wav."
       },
       "getText": {
         "title": "Receba o Texto",
-        "description": "A transcrição roda localmente. O texto é copiado automaticamente para sua área de transferência."
+        "description": "Acompanhe o progresso em tempo real. O texto e copiado automaticamente para a area de transferencia e salvo no historico. Opcionalmente veja os resultados em uma janela flutuante."
       }
     }
   },
   "privacy": {
     "title": "Sua privacidade importa",
-    "description": "DropVox roda totalmente no seu Mac. Seus arquivos de áudio são processados localmente usando o modelo Whisper da OpenAI. Sem uploads na nuvem, sem necessidade de conta, sem coleta de dados. Nunca.",
-    "noInternet": "Não precisa de internet",
-    "noAccount": "Não precisa de conta",
-    "openSource": "Código aberto"
+    "description": "DropVox roda totalmente no seu Mac. Seus arquivos de audio sao processados localmente usando WhisperKit, a implementacao otimizada da Apple do Whisper AI. Sem uploads na nuvem, sem necessidade de conta, sem coleta de dados. Nunca.",
+    "noInternet": "Nao precisa de internet",
+    "noAccount": "Nao precisa de conta",
+    "openSource": "Codigo aberto"
   },
   "cta": {
     "title": "Pronto para transcrever?",
     "description": "Baixe o DropVox e comece a converter mensagens de voz em texto em segundos.",
     "downloadButton": "Baixar para macOS",
     "githubButton": "Ver no GitHub",
-    "version": "macOS 10.15+ • Licença MIT"
+    "version": "macOS 14+ (Sonoma) • Apple Silicon • Licenca MIT"
   },
   "support": {
-    "title": "Achou útil?",
-    "description": "DropVox é gratuito e open source. Se ele economiza seu tempo transcrevendo mensagens de voz, considere me pagar um café.",
+    "title": "Achou util?",
+    "description": "DropVox e gratuito e open source. Se ele economiza seu tempo transcrevendo mensagens de voz, considere me pagar um cafe.",
     "pix": "PIX",
-    "pixKeyLabel": "Chave PIX (Aleatória)",
+    "pixKeyLabel": "Chave PIX (Aleatoria)",
     "copyButton": "Copiar Chave PIX",
     "copiedButton": "Copiado!"
   },

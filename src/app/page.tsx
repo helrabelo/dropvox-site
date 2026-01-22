@@ -40,9 +40,9 @@ async function getLatestRelease() {
   } catch {
     // Fallback to latest known version
     return {
-      version: "0.7.2",
+      version: "1.0.0",
       downloadUrl:
-        "https://github.com/helsky-labs/dropvox/releases/download/v0.7.2/DropVox-0.7.2.dmg",
+        "https://github.com/helsky-labs/dropvox/releases/download/v1.0.0/DropVox-1.0.0.dmg",
     };
   }
 }
@@ -83,7 +83,7 @@ function FeatureIcon({ icon }: { icon: string }) {
           />
         </svg>
       );
-    case "menubar":
+    case "window":
       return (
         <svg
           className={iconClasses}
@@ -95,7 +95,7 @@ function FeatureIcon({ icon }: { icon: string }) {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M4 6h16M4 12h16M4 18h7"
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
           />
         </svg>
       );
@@ -115,6 +115,22 @@ function FeatureIcon({ icon }: { icon: string }) {
           />
         </svg>
       );
+    case "dropzone":
+      return (
+        <svg
+          className={iconClasses}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+          />
+        </svg>
+      );
     case "history":
       return (
         <svg
@@ -128,6 +144,22 @@ function FeatureIcon({ icon }: { icon: string }) {
             strokeLinejoin="round"
             strokeWidth={2}
             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      );
+    case "models":
+      return (
+        <svg
+          className={iconClasses}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
           />
         </svg>
       );
@@ -164,36 +196,56 @@ export default async function LandingPage() {
       title: t("features.items.localAI.title"),
       description: t("features.items.localAI.description"),
       popular: true,
+      isNew: false,
     },
     {
       icon: "globe",
       title: t("features.items.languages.title"),
       description: t("features.items.languages.description"),
-      popular: true,
+      popular: false,
+      isNew: false,
     },
     {
-      icon: "menubar",
-      title: t("features.items.menuBar.title"),
-      description: t("features.items.menuBar.description"),
+      icon: "window",
+      title: t("features.items.fullApp.title"),
+      description: t("features.items.fullApp.description"),
       popular: false,
+      isNew: true,
     },
     {
       icon: "clipboard",
       title: t("features.items.clipboard.title"),
       description: t("features.items.clipboard.description"),
+      popular: true,
+      isNew: false,
+    },
+    {
+      icon: "dropzone",
+      title: t("features.items.dropZone.title"),
+      description: t("features.items.dropZone.description"),
       popular: false,
+      isNew: true,
     },
     {
       icon: "history",
       title: t("features.items.history.title"),
       description: t("features.items.history.description"),
       popular: true,
+      isNew: false,
+    },
+    {
+      icon: "models",
+      title: t("features.items.models.title"),
+      description: t("features.items.models.description"),
+      popular: false,
+      isNew: true,
     },
     {
       icon: "lock",
       title: t("features.items.privacy.title"),
       description: t("features.items.privacy.description"),
       popular: false,
+      isNew: false,
     },
   ];
 
@@ -421,22 +473,32 @@ export default async function LandingPage() {
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <FadeIn key={feature.title} delay={index * 100}>
                 <div
                   className={`relative p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border transition-all hover:shadow-lg hover:scale-[1.02] ${
-                    feature.popular
+                    feature.isNew
+                      ? "border-green-200 dark:border-green-800"
+                      : feature.popular
                       ? "border-indigo-200 dark:border-indigo-800"
                       : "border-slate-200 dark:border-slate-700"
                   }`}
                 >
-                  {feature.popular && (
+                  {feature.isNew ? (
+                    <span className="absolute -top-3 right-4 px-3 py-1 text-xs font-medium bg-green-600 text-white rounded-full">
+                      {t("features.new")}
+                    </span>
+                  ) : feature.popular ? (
                     <span className="absolute -top-3 right-4 px-3 py-1 text-xs font-medium bg-indigo-600 text-white rounded-full">
                       {t("features.popular")}
                     </span>
-                  )}
-                  <div className="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4">
+                  ) : null}
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+                    feature.isNew
+                      ? "bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400"
+                      : "bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400"
+                  }`}>
                     <FeatureIcon icon={feature.icon} />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>

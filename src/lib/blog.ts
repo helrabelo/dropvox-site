@@ -40,7 +40,7 @@ Most transcription services require uploading your audio to their servers. This 
 
 ## The DropVox Solution
 
-DropVox transcribes everything **locally on your Mac** using the Whisper AI model. Here's what that means:
+DropVox transcribes everything **locally on your Mac** using WhisperKit AI optimized for Apple Silicon. Here's what that means:
 
 1. **100% Private**: Your audio never leaves your computer
 2. **No Internet Required**: Works completely offline
@@ -51,11 +51,16 @@ DropVox transcribes everything **locally on your Mac** using the Whisper AI mode
 
 ### 1. Download DropVox
 
-Download the latest version from our website or GitHub releases. It's a simple DMG file that installs like any Mac app.
+Download the latest version from our website or GitHub releases. It's a simple DMG file that installs like any Mac app. Requires macOS 14 (Sonoma) or later and Apple Silicon.
 
 ### 2. Launch the App
 
-DropVox lives in your menu bar - you'll see a small icon that gives you quick access to all features.
+DropVox opens with a full application window featuring:
+- **Dashboard**: Quick actions and recent transcriptions
+- **History**: Browse all past transcriptions with search
+- **Settings**: Configure your preferred AI model and language
+
+You'll also see a menu bar icon for quick access to transcription features.
 
 ### 3. Get Your WhatsApp Audio
 
@@ -66,24 +71,27 @@ In WhatsApp Desktop or Web:
 
 ### 4. Transcribe
 
-You have two options in DropVox:
-- **Select Audio File**: Navigate to the saved audio file
-- **Paste from Clipboard**: If you copied the audio file
+You have multiple options in DropVox:
+- **Select Audio File**: Click the button or use Cmd+O
+- **Paste from Clipboard**: Copy files in Finder, then Cmd+V in DropVox
+- **Drag and Drop**: Open the Drop Zone (Cmd+D) and drag files onto it
 
 The transcription starts immediately and typically completes in seconds.
 
 ### 5. Use Your Transcription
 
 The text is automatically copied to your clipboard. You can also:
-- View it in the app's history
-- Copy it again anytime
-- See all your recent transcriptions
+- View it in the floating result window
+- Browse all transcriptions in the History section
+- See which AI model was used and when
+- Copy text again anytime
 
 ## Tips for Best Results
 
 - **Clear audio works best**: Background noise can affect accuracy
-- **Multiple languages**: DropVox supports 15+ languages automatically
+- **Multiple languages**: DropVox supports 13 languages with auto-detection
 - **Long messages**: Even lengthy voice messages transcribe quickly
+- **Choose your model**: Larger models (Small, Medium, Large) are more accurate but slower
 
 ## Conclusion
 
@@ -133,18 +141,21 @@ Internet outages don't affect your ability to transcribe.
 
 **Best for**: WhatsApp audio messages and quick transcriptions
 
-DropVox is a lightweight menu bar app designed for quick, everyday transcription needs.
+DropVox is a native Swift app designed for quick, everyday transcription needs. The v1.0 rewrite brings a full application window alongside the menu bar icon.
 
 **Pros:**
-- Lives in menu bar for instant access
-- Clipboard integration
-- Transcription history
+- Full app window with Dashboard, History, and Settings
+- Menu bar access for quick transcriptions
+- Floating Drop Zone for drag-and-drop
+- Cmd+V paste support
+- 5 model sizes (75MB to 3GB)
 - Completely free and open source
-- Minimal resource usage
+- WhisperKit optimized for Apple Silicon
 
 **Cons:**
+- Requires macOS 14+ (Sonoma)
+- Apple Silicon only (no Intel support)
 - Focused on simplicity (fewer advanced features)
-- macOS only
 
 ### MacWhisper
 
@@ -185,21 +196,23 @@ Consider these factors:
 2. **Technical comfort**: Do you want simplicity or customization?
 3. **Budget**: Free vs paid options
 4. **System resources**: Some models need significant RAM/CPU
+5. **Hardware**: DropVox requires Apple Silicon; others may support Intel
 
 ## Why We Built DropVox
 
 We created DropVox because we needed a tool that:
 
-- **Just works**: Click and transcribe
+- **Just works**: Multiple ways to transcribe (file picker, paste, drag-drop)
 - **Stays private**: No cloud, no accounts
-- **Feels native**: Lives in the menu bar
+- **Feels native**: Full Swift/SwiftUI app optimized for macOS
 - **Costs nothing**: Free for everyone
+- **Gives you options**: Choose from 5 AI models based on your needs
 
 For users who receive lots of voice messages and want quick, private transcription, DropVox fills a gap that other apps don't address.
 
 ## Conclusion
 
-The best Whisper app depends on your needs. For everyday users who want quick, private transcription of voice messages, DropVox is an excellent choice. For professional transcription work with advanced features, consider MacWhisper.
+The best Whisper app depends on your needs. For everyday users who want quick, private transcription of voice messages on Apple Silicon Macs, DropVox is an excellent choice. For professional transcription work with advanced features, consider MacWhisper.
 
 Try DropVox free today and see how local AI transcription can fit into your workflow.
     `,
@@ -253,7 +266,7 @@ Local transcription eliminates these concerns entirely:
 
 When you use DropVox or similar local tools:
 - Audio files stay on your Mac
-- Processing happens using your CPU
+- Processing happens using WhisperKit on Apple's Neural Engine
 - No internet connection is needed
 - No third-party ever touches your data
 
@@ -288,18 +301,20 @@ DropVox is designed for privacy-first transcription:
 ### Step 2: Understand the Process
 
 When you transcribe with DropVox:
-1. You select or paste an audio file
-2. The Whisper AI model processes it locally
-3. Text appears in the app
-4. Result is copied to clipboard
-5. History stays on your device
+1. You select, paste, or drag an audio file
+2. WhisperKit processes it on your Apple Silicon chip
+3. Text appears in the app and is copied to clipboard
+4. Result is saved to your local history
+5. All data stays on your device
 
 ### Step 3: Manage Your Data
 
-DropVox stores transcription history locally. You control:
-- What to keep
-- What to delete
-- Where files are stored
+DropVox stores transcription history locally. The History browser lets you:
+- Browse all past transcriptions
+- Search for specific content
+- See which model was used
+- Copy text from any transcription
+- Clear history when needed
 
 ## Best Practices for Audio Privacy
 
@@ -333,8 +348,8 @@ But for private, personal, or sensitive audio, local processing is the safer cho
 
 As AI becomes more powerful, the ability to run it locally becomes more important:
 
-- Models are getting smaller and more efficient
-- Consumer hardware is getting more powerful
+- Models are getting smaller and more efficient (WhisperKit proves this)
+- Apple Silicon makes on-device AI fast and efficient
 - Privacy awareness is increasing
 
 Tools like DropVox represent a future where powerful AI respects user privacy by design.

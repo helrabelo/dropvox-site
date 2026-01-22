@@ -1,26 +1,26 @@
 {
   "meta": {
     "title": "DropVox - Transcribe WhatsApp Audio Messages",
-    "description": "Free macOS menu bar app that converts voice messages to text using AI. Works offline, supports 15+ languages."
+    "description": "Native macOS app that converts voice messages to text using on-device AI. Works offline, supports 13 languages, Apple Silicon optimized."
   },
   "nav": {
     "github": "GitHub"
   },
   "hero": {
-    "badge": "100% Free & Open Source",
+    "badge": "Native Swift App - v1.0",
     "title": "Transcribe",
     "titleHighlight": "WhatsApp Audio",
     "titleEnd": "Messages in Seconds",
-    "description": "DropVox is a macOS menu bar app that converts voice messages to text using AI. Works offline, supports 15+ languages, and never uploads your audio anywhere.",
+    "description": "DropVox is a native macOS app that converts voice messages to text using WhisperKit AI. Full app window, menu bar access, and floating drop zone. Works offline, supports 13 languages, and never uploads your audio anywhere.",
     "downloadButton": "Download for macOS",
     "featuresButton": "See Features",
-    "requirements": "Requires macOS 10.15+ • ~500MB disk space • Apple Silicon & Intel supported"
+    "requirements": "Requires macOS 14+ (Sonoma) • Apple Silicon • 75MB-3GB for AI models"
   },
   "preview": {
-    "menuBar": "Menu Bar",
+    "menuBar": "Main Window - Dashboard",
     "selectAudio": "Select Audio Files...",
-    "pasteClipboard": "Paste from Clipboard",
-    "recent": "Recent",
+    "pasteClipboard": "Paste from Clipboard (Cmd+V)",
+    "recent": "Recent Transcriptions",
     "recentMessage1": "\"Hey, can you call me back when...\"",
     "recentTime1": "2m ago",
     "recentMessage2": "\"The meeting is scheduled for...\"",
@@ -28,56 +28,65 @@
   },
   "features": {
     "title": "Everything you need",
-    "description": "Simple yet powerful features designed for one thing: converting voice to text without hassle.",
+    "description": "A complete transcription solution with multiple ways to work: full app window, menu bar, keyboard shortcuts, and drag-and-drop.",
     "popular": "Popular",
+    "new": "New",
     "items": {
       "localAI": {
-        "title": "Local AI Powered",
-        "description": "Uses OpenAI Whisper running entirely on your Mac. No internet required after setup."
+        "title": "WhisperKit AI",
+        "description": "Uses WhisperKit optimized for Apple Silicon. Choose from 5 models (75MB-3GB). No internet required after setup."
       },
       "languages": {
-        "title": "15+ Languages",
-        "description": "Supports Portuguese, English, Spanish, French, German, Chinese, Japanese, and more."
+        "title": "13 Languages",
+        "description": "Auto-detect or choose: Portuguese, English, Spanish, French, German, Chinese, Japanese, Korean, and more."
       },
-      "menuBar": {
-        "title": "Menu Bar App",
-        "description": "Lives quietly in your menu bar. Quick access without cluttering your dock."
+      "fullApp": {
+        "title": "Full App Window",
+        "description": "Dashboard with quick actions, history browser with search, and settings. Not just a menu bar app anymore."
       },
       "clipboard": {
-        "title": "Clipboard Integration",
-        "description": "Copy audio files in Finder, paste directly in DropVox. Results auto-copied."
+        "title": "Cmd+V Paste",
+        "description": "Copy audio files in Finder, press Cmd+V in DropVox. Instant transcription with results auto-copied to clipboard."
+      },
+      "dropZone": {
+        "title": "Drop Zone",
+        "description": "Floating window for drag-and-drop. Keep it visible while browsing files. Toggle with Cmd+D."
       },
       "history": {
-        "title": "Transcription History",
-        "description": "Access your last 10 transcriptions anytime. Never lose important voice messages."
+        "title": "History Browser",
+        "description": "Full history of all transcriptions with search. View details, copy text, see which model was used."
+      },
+      "models": {
+        "title": "Model Selection",
+        "description": "Choose accuracy vs speed: Tiny (75MB, fastest) to Large (3GB, most accurate). Download only what you need."
       },
       "privacy": {
         "title": "100% Private",
-        "description": "Your audio never leaves your Mac. No cloud, no accounts, no data collection."
+        "description": "Your audio never leaves your Mac. No cloud, no accounts, no data collection. Everything runs locally."
       }
     }
   },
   "howItWorks": {
     "title": "How it works",
-    "description": "Three simple steps to transcribe your audio files.",
+    "description": "Three ways to transcribe your audio files - use whichever fits your workflow.",
     "steps": {
       "download": {
         "title": "Download & Install",
-        "description": "Download the DMG, drag DropVox to Applications. First run downloads the AI model (~150MB)."
+        "description": "Download the DMG, drag DropVox to Applications. On first run, choose and download an AI model (75MB-3GB)."
       },
       "select": {
-        "title": "Select Audio Files",
-        "description": "Click the menu bar icon, pick audio files. Supports .opus, .mp3, .m4a, and .wav formats."
+        "title": "Transcribe Your Way",
+        "description": "Use the main window, click the menu bar icon, press Cmd+V to paste, or drag files to the Drop Zone. Supports .opus, .mp3, .m4a, and .wav."
       },
       "getText": {
         "title": "Get Your Text",
-        "description": "Transcription runs locally. Text is automatically copied to your clipboard when done."
+        "description": "Watch real-time progress. Text is automatically copied to clipboard and saved to history. Optionally view results in a floating window."
       }
     }
   },
   "privacy": {
     "title": "Your privacy matters",
-    "description": "DropVox runs entirely on your Mac. Your audio files are processed locally using OpenAI's Whisper model. No cloud uploads, no accounts required, no data collection. Ever.",
+    "description": "DropVox runs entirely on your Mac. Your audio files are processed locally using WhisperKit, Apple's optimized implementation of Whisper AI. No cloud uploads, no accounts required, no data collection. Ever.",
     "noInternet": "No internet required",
     "noAccount": "No account needed",
     "openSource": "Open source code"
@@ -87,7 +96,7 @@
     "description": "Download DropVox and start converting voice messages to text in seconds.",
     "downloadButton": "Download for macOS",
     "githubButton": "View on GitHub",
-    "version": "macOS 10.15+ • MIT License"
+    "version": "macOS 14+ (Sonoma) • Apple Silicon • MIT License"
   },
   "support": {
     "title": "Find this helpful?",

@@ -44,26 +44,44 @@ export default function PricingPage() {
   const freeFeatures = [
     { text: "3 transcriptions per day", included: true },
     { text: "60 second max audio", included: true },
-    { text: "Large Whisper model", included: true },
-    { text: "100+ languages", included: true },
+    { text: "Base Whisper model (145MB)", included: true },
+    { text: "13 languages", included: true },
+    { text: "Full app window & menu bar", included: true },
     { text: "Longer audio files", included: false },
     { text: "Unlimited transcriptions", included: false },
+    { text: "All 5 Whisper models", included: false },
   ];
 
   const proFeatures = [
     { text: "Unlimited transcriptions", included: true },
     { text: "No audio length limit", included: true },
-    { text: "All Whisper models", included: true },
-    { text: "100+ languages", included: true },
+    { text: "All 5 Whisper models (75MB-3GB)", included: true },
+    { text: "13 languages", included: true },
+    { text: "Full app window & menu bar", included: true },
     { text: "Priority support", included: true },
     { text: "Use on 3 machines", included: true },
   ];
 
   const faqs = [
     {
+      question: "What are the system requirements?",
+      answer:
+        "DropVox requires macOS 14 (Sonoma) or later and an Apple Silicon Mac (M1, M2, M3, or later). WhisperKit is optimized specifically for Apple's Neural Engine, so Intel Macs are not supported.",
+    },
+    {
+      question: "Why doesn't it work on Intel Macs?",
+      answer:
+        "DropVox uses WhisperKit, Apple's optimized implementation of Whisper AI. WhisperKit leverages the Neural Engine in Apple Silicon chips for fast, efficient transcription. Intel Macs don't have this hardware.",
+    },
+    {
       question: "How does the license work?",
       answer:
         "Your license is a one-time purchase valid for DropVox v1.x. You can use it on up to 3 machines. When v2 releases with major new features, you'll have the option to upgrade.",
+    },
+    {
+      question: "What's the difference between the Whisper models?",
+      answer:
+        "DropVox offers 5 models: Tiny (75MB, fastest), Base (145MB, fast), Small (470MB, balanced), Medium (1.5GB, accurate), and Large (3GB, most accurate). Larger models are slower but more accurate. Free tier uses Base; Pro unlocks all models.",
     },
     {
       question: "What payment methods do you accept?",
@@ -78,12 +96,12 @@ export default function PricingPage() {
     {
       question: "What happens to my transcriptions?",
       answer:
-        "All transcriptions happen locally on your Mac using Whisper AI. Your audio never leaves your computer - we have no access to your data.",
+        "All transcriptions happen locally on your Mac using WhisperKit AI. Your audio never leaves your computer - we have no access to your data. History is stored locally and can be cleared anytime.",
     },
     {
       question: "Do I need an internet connection?",
       answer:
-        "Internet is only needed to validate your license occasionally. Transcription itself works completely offline after the Whisper model is downloaded.",
+        "Internet is only needed to download the AI model initially and to validate your license occasionally. Transcription itself works completely offline.",
     },
   ];
 
@@ -126,6 +144,11 @@ export default function PricingPage() {
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               Start free with 3 transcriptions per day. Upgrade to Pro for
               unlimited transcriptions and longer audio files.
+            </p>
+          </FadeIn>
+          <FadeIn delay={150}>
+            <p className="mt-4 text-sm text-slate-500 dark:text-slate-500">
+              Requires macOS 14+ (Sonoma) and Apple Silicon (M1/M2/M3)
             </p>
           </FadeIn>
         </div>

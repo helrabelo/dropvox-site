@@ -27,21 +27,23 @@ export const metadata: Metadata = {
     template: "%s | DropVox",
   },
   description:
-    "DropVox is a free macOS menu bar app that transcribes WhatsApp voice messages and audio files using AI. 100% local, private, and offline.",
+    "DropVox is a native macOS app that transcribes WhatsApp voice messages and audio files using WhisperKit AI. 100% local, private, and offline. Requires macOS 14+ and Apple Silicon.",
   keywords: [
     "whatsapp voice message transcription",
     "mac audio transcription",
-    "whisper transcription",
+    "whisperkit transcription",
     "voice to text mac",
     "audio transcription app",
-    "menu bar app",
+    "macos sonoma app",
     "macos transcription",
     "offline transcription",
     "private transcription",
     "local ai transcription",
     "whatsapp audio to text",
     "mac voice to text",
-    "free transcription app",
+    "apple silicon transcription",
+    "native swift app",
+    "on-device ai",
   ],
   authors: [{ name: "Hel Rabelo", url: "https://github.com/helrabelo" }],
   creator: "Hel Rabelo",
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DropVox - Transcribe WhatsApp Audio Messages",
     description:
-      "Free macOS menu bar app for transcribing audio files using AI. 100% local and private.",
+      "Native macOS app with WhisperKit AI for transcribing audio files. Full app window, menu bar, and drag-and-drop. 100% local and private.",
     type: "website",
     locale: "en_US",
     alternateLocale: "pt_BR",
@@ -83,7 +85,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DropVox - Audio Transcription for Mac",
     description:
-      "Free macOS menu bar app for transcribing audio files using AI. 100% local and private.",
+      "Native macOS app with WhisperKit AI for transcribing audio files. Full app window, menu bar, and drag-and-drop. Requires macOS 14+ and Apple Silicon.",
     images: ["/og-image.png"],
   },
   robots: {

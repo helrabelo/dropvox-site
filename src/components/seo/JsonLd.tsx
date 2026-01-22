@@ -6,15 +6,16 @@ export function JsonLd() {
     "@type": "SoftwareApplication",
     name: "DropVox",
     applicationCategory: "UtilitiesApplication",
-    operatingSystem: "macOS",
+    operatingSystem: "macOS 14.0 (Sonoma) or later",
+    processorRequirements: "Apple Silicon (M1, M2, M3, or later)",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
     },
     description:
-      "Free macOS menu bar app for transcribing WhatsApp voice messages and audio files using local AI. 100% private and offline.",
-    softwareVersion: "0.7.2",
+      "Native macOS app for transcribing WhatsApp voice messages and audio files using WhisperKit AI. Features full app window, menu bar access, floating drop zone, and history browser. 100% private and offline.",
+    softwareVersion: "1.0.0",
     downloadUrl: `${baseUrl}`,
     screenshot: `${baseUrl}/icon.png`,
     author: {
@@ -27,11 +28,13 @@ export function JsonLd() {
       name: "Hel Rabelo",
     },
     featureList: [
-      "Local AI transcription using Whisper",
-      "15+ language support",
+      "WhisperKit AI transcription optimized for Apple Silicon",
+      "13 language support with auto-detection",
+      "Full app window with Dashboard and History",
       "Menu bar integration",
-      "Clipboard support",
-      "Transcription history",
+      "Floating Drop Zone for drag-and-drop",
+      "Cmd+V clipboard paste support",
+      "5 AI models from 75MB to 3GB",
       "100% offline and private",
     ],
   };
@@ -42,7 +45,7 @@ export function JsonLd() {
     name: "DropVox",
     url: baseUrl,
     description:
-      "DropVox is a free macOS menu bar app that transcribes WhatsApp voice messages and audio files using AI.",
+      "DropVox is a native macOS app that transcribes WhatsApp voice messages and audio files using WhisperKit AI.",
     publisher: {
       "@type": "Person",
       name: "Hel Rabelo",
